@@ -1,0 +1,150 @@
+.footer-wrapper {
+    padding: 0 80px;
+}
+
+.footer {
+    display: flex;
+    gap: 60px;
+}
+
+.footer>div>div>a {
+    color: #000;
+    font-size: 14px;
+    line-height: 28px;
+    transition: all 0.1s ease-in-out;
+}
+
+.footer>div>div>a:hover {
+    color: #e56451;
+}
+
+.footer>div>h1 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.footer>div {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-1 {
+    width: 35%;
+}
+
+.footer-1-logo {
+    margin-bottom: 20px;
+}
+
+.footer-1-text {
+    margin-bottom: 40px;
+    font-size: 14px;
+    line-height: 21px;
+    color: #221f1e;
+}
+
+.footer-1-payments>h1 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.footer-payment-thumb-wrap {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 270px;
+    gap: 10px;
+}
+
+.payment-single-item {
+    display: flex;
+    min-height: 40px;
+    min-width: 58px;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    border-style: solid;
+    border-width: 0.5px;
+    border-color: rgb(217, 217, 217);
+    border-radius: 5px;
+}
+
+.footer-2-links,
+.footer-3-links,
+.footer-4-links,
+.footer-5-links {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-line {
+    width: 100%;
+    height: 1px;
+    background-color: #d9d9d9;
+    margin: 40px 0;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-bottom-1 {
+    display: flex;
+    gap: 35px;
+}
+
+.footer-bottom-1>div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-bottom-1>div>h2 {
+    color: #231f1e;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 21px;
+    transition: all 0.1s ease-in-out;
+}
+
+.footer-bottom-1>div>h2:hover {
+    color: #e56451;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.footer-bottom-1-image {
+    height: 30px;
+    width: 30px;
+    margin-right: 7px;
+}
+
+.footer-bottom-1-image>img {
+    width: 100%;
+}
+
+.footer-bottom-2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.footer-bottom-2>h2,
+.footer-bottom-3>h2 {
+    color: #231f1e;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 21px;
+    transition: all 0.1s ease-in-out;
+}
+
+.footer-bottom-2>h2:hover {
+    color: #e56451;
+    cursor: pointer;
+}

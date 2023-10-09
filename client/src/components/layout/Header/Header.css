@@ -3,7 +3,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 80px;
+    height: 7vmin;
+    padding: 0 80px;
 }
 
 .header-links {

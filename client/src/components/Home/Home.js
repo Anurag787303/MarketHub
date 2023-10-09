@@ -1,37 +1,49 @@
-import React, { Fragment } from 'react'
-import Carousel from 'react-bootstrap/Carousel';
-import './Home.css'
+import React, { Fragment, useEffect } from "react";
+import { CgMouse } from "react-icons/cg"
+import "./Home.css";
+import ProductCard from "./ProductCard.js";
+import MetaData from "../layout/MetaData";
 
-const Home = () => {
-    return (
-        <Fragment>
-            <Carousel>
-                <Carousel.Item>
-                    <img className="carousel-image" src="https://cdn.discordapp.com/attachments/1064388669248634911/1159752128143831211/anurag787303_man_wearing_headphone_looking_at_left_with_plain_g_12ff6cc5-6b62-46c5-b895-d19d39253c46.png?ex=65322a56&is=651fb556&hm=af5efbc6c36c64d66d889d68ff2c9b4e8953cb81c547ad3c0d200fd5c4c4cbc0&" />
-                    <Carousel.Caption>
-                        <h3>First slide label</h3>
-                        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                    </Carousel.Caption>
-                </Carousel.Item>
-                <Carousel.Item>
-                    <img className="carousel-image" src="https://cdn.discordapp.com/attachments/1064388669248634911/1159752128143831211/anurag787303_man_wearing_headphone_looking_at_left_with_plain_g_12ff6cc5-6b62-46c5-b895-d19d39253c46.png?ex=65322a56&is=651fb556&hm=af5efbc6c36c64d66d889d68ff2c9b4e8953cb81c547ad3c0d200fd5c4c4cbc0&" />
-                    <Carousel.Caption>
-                        <h3>Second slide label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    </Carousel.Caption>
-                </Carousel.Item>
-                <Carousel.Item>
-                    <img className="carousel-image" src="https://cdn.discordapp.com/attachments/1064388669248634911/1159752128143831211/anurag787303_man_wearing_headphone_looking_at_left_with_plain_g_12ff6cc5-6b62-46c5-b895-d19d39253c46.png?ex=65322a56&is=651fb556&hm=af5efbc6c36c64d66d889d68ff2c9b4e8953cb81c547ad3c0d200fd5c4c4cbc0&" />
-                    <Carousel.Caption>
-                        <h3>Third slide label</h3>
-                        <p>
-                            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-                        </p>
-                    </Carousel.Caption>
-                </Carousel.Item>
-            </Carousel>
-        </Fragment >
-    )
+
+const product = {
+  name: "Blue Shirt",
+  images: [{
+    url: "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQD78H2H5KqAz48MybID3Sv5uMrKU1qDD-hd6HZe0x3PrfB67odzeCktlaHn6UqeU3IwsW2HvPtziwnyiRW4G5w_-32y-CddhIItPBMeaYrRsUStHj_Z6_9"
+  }],
+  price: "3000",
+  _id: "abcdefg"
 }
 
-export default Home
+const Home = () => {
+  return (
+    <Fragment>
+      <MetaData title="ECOMMERCE" />
+
+      <div className="banner">
+        <p>Welcome to Ecommerce</p>
+        <h1>FIND AMAZING PRODUCTS BELOW</h1>
+
+        <a href="#container">
+          <button>
+            Scroll <CgMouse />
+          </button>
+        </a>
+      </div>
+
+      <h2 className="homeHeading">Featured Products</h2>
+
+      <div className="container" id="container">
+        <ProductCard product={product} />
+        <ProductCard product={product} />
+        <ProductCard product={product} />
+        <ProductCard product={product} />
+        <ProductCard product={product} />
+        <ProductCard product={product} />
+        <ProductCard product={product} />
+        <ProductCard product={product} />
+      </div>
+    </Fragment>
+  );
+};
+
+export default Home;

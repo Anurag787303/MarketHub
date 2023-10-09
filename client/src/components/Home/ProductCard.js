@@ -6,6 +6,7 @@ const ProductCard = ({ product }) => {
   const options = {
     value: product.ratings,
     readOnly: true,
+    value: product.ratings,
     precision: 0.5,
   };
   return (
@@ -16,7 +17,7 @@ const ProductCard = ({ product }) => {
         <Rating {...options} />{" "}
         <span className="productCardSpan">
           {" "}
-          ({product.numOfReviews || 256} Reviews)
+          ({product.numOfReviews} Reviews)
         </span>
       </div>
       <span>{`₹${product.price}`}</span>

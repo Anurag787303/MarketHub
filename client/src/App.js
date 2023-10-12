@@ -7,7 +7,7 @@ import { useEffect } from 'react';
 import Home from './components/Home/Home';
 import "react-bootstrap/dist/react-bootstrap.min.js"
 import ProductDetails from './components/Product/ProductDetails.js';
-// import Products from './components/Product/Products.js';
+import Products from './components/Product/Products.js';
 
 function App() {
   useEffect(() => {
@@ -24,7 +24,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/product/:id" element={<ProductDetails />} />
-        {/* <Route path="/products" element={<Products />} /> */}
+        <Route exact path="/products" element={<Products />} />
+        <Route path="/products/:keyword" element={<Products />} />
       </Routes>
       <Footer />
     </Router>

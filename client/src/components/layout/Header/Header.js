@@ -1,8 +1,20 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, {useState} from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 import './Header.css'
 
 const Header = () => {
+    const [keyword, setKeyword] = useState('');
+    const navigate = useNavigate();
+
+    const submitSearch = (e) => {
+        e.preventDefault();
+        if(keyword.trim()) {
+            navigate(`/products/${keyword}`);
+        } else {
+            navigate('/products');
+        }
+    }
+
     return (
         <div className='header'>
             <Link to='/'>
@@ -17,8 +29,8 @@ const Header = () => {
                 <Link to='/'>Contact</Link>
             </div>
             <div className='header-search'>
-                <input type='text' placeholder='Search' />
-                <div className='header-search-image'>
+                <input type='text' placeholder='Search a Product ...' onChange={(e) => setKeyword(e.target.value)}/>
+                <div className='header-search-image' onClick={submitSearch}>
                     <img src='./assets/ic-actions-search.png' alt='search' />
                 </div>
             </div>

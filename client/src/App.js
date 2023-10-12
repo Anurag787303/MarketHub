@@ -6,6 +6,8 @@ import WebFont from 'webfontloader';
 import { useEffect } from 'react';
 import Home from './components/Home/Home';
 import "react-bootstrap/dist/react-bootstrap.min.js"
+import ProductDetails from './components/Product/ProductDetails.js';
+// import Products from './components/Product/Products.js';
 
 function App() {
   useEffect(() => {
@@ -21,6 +23,8 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/product/:id" element={<ProductDetails />} />
+        {/* <Route path="/products" element={<Products />} /> */}
       </Routes>
       <Footer />
     </Router>

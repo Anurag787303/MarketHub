@@ -13,3 +13,21 @@ a {
 a:hover {
     text-decoration: none;
 }
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type='number'] {
+    -moz-appearance: textfield;
+}
+
+.greenColor {
+    color: #00bfa6;
+}
+
+.redColor {
+    color: #ff5252;
+}

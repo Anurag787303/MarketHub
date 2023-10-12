@@ -1,17 +1,20 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './Header.css'
 
 const Header = () => {
     return (
         <div className='header'>
+            <Link to='/'>
             <div className='header-logo'>
                 <img src='https://uploads-ssl.webflow.com/63e857eaeaf853471d5335ff/63e86ab4c21faa7bc0bd90dd_Logo.svg' alt='logo' />
             </div>
+            </Link>
             <div className='header-links'>
-                <a href='#'>Category</a>
-                <a href='#'>Products</a>
-                <a href='#'>About</a>
-                <a href='#'>Contact</a>
+                <Link to='/'>Category</Link>
+                <Link to='/products'>Products</Link>
+                <Link to='/'>About</Link>
+                <Link to='/'>Contact</Link>
             </div>
             <div className='header-search'>
                 <input type='text' placeholder='Search' />

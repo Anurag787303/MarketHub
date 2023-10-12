@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react'
+import { Link } from 'react-router-dom'
 import './Footer.css'
 
 const Footer = () => {
@@ -8,9 +9,11 @@ const Footer = () => {
                 <div className='footer-line'></div>
                 <div className='footer'>
                     <div className='footer-1'>
+                        <Link to='/'>
                         <div className='footer-1-logo'>
                             <img src='https://uploads-ssl.webflow.com/63e857eaeaf853471d5335ff/63e86ab4c21faa7bc0bd90dd_Logo.svg' alt='logo' />
                         </div>
+                        </Link>
                         <p className='footer-1-text'>
                             lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
                         </p>

@@ -34,12 +34,14 @@ const Header = () => {
                     <img src='./assets/ic-actions-search.png' alt='search' />
                 </div>
             </div>
+            <Link to='/login'>
             <div className='header-account'>
                 <div className='account-image'>
                     <img src='./assets/ic-actions-user.png' alt='account' />
                 </div>
                 <span>Account</span>
             </div>
+            </Link>
             <div className='header-cart'>
                 <div className='cart-image'>
                     <img src='./assets/ic-ecommerce-cart.png' alt='cart' />

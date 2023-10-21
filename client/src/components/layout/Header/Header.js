@@ -42,12 +42,14 @@ const Header = () => {
                 <span>Account</span>
             </div>
             </Link>
+            <Link to='/cart'>
             <div className='header-cart'>
                 <div className='cart-image'>
                     <img src='./assets/ic-ecommerce-cart.png' alt='cart' />
                 </div>
                 <span>Cart</span>
             </div>
+            </Link>
         </div>
     )
 }

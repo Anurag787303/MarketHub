@@ -12,7 +12,7 @@ import ReviewCard from "./ReviewCard.js";
 import Loader from "../layout/Loader/Loader";
 import { useAlert } from "react-alert";
 import MetaData from "../layout/MetaData";
-// import { addItemsToCart } from "../../actions/cartAction";
+import { addItemsToCart } from "../../actions/cartAction";
 import {
   Dialog,
   DialogActions,
@@ -63,7 +63,7 @@ const ProductDetails = () => {
   };
 
   const addToCartHandler = () => {
-    // dispatch(addItemsToCart(params.id, quantity));
+    dispatch(addItemsToCart(params.id, quantity));
     alert.success("Item Added To Cart");
   };
 

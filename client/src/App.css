@@ -25,9 +25,9 @@ input[type='number'] {
 }
 
 .greenColor {
-    color: #00bfa6;
+    color: #00bfa6 !important;
 }
 
 .redColor {
-    color: #ff5252;
+    color: #ff5252 !important;
 }

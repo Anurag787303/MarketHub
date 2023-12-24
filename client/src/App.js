@@ -28,6 +28,15 @@ import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 import MyOrders from './components/Order/MyOrders.js';
 import OrderDetails from './components/Order/OrderDetails';
+import Dashboard from './components/admin/Dashboard'
+import ProductList from './components/admin/ProductList'
+import UpdateProduct from './components/admin/UpdateProduct'
+import NewProduct from './components/admin/NewProduct'
+import OrderList from './components/admin/OrderList.js';
+import ProcessOrder from './components/admin/ProcessOrder.js';
+import UsersList from './components/admin/UsersList.js';
+import UpdateUser from './components/admin/UpdateUser.js';
+import ProductReviews from './components/admin/ProductReviews.js';
 
 function App() {
   const { isAuthenticated, user } = useSelector(state => state.user)
@@ -125,6 +134,68 @@ function App() {
         }
         />
 
+        <Route exact path="/admin/dashboard" element={
+          <ProtectedRoute isAdmin={true}>
+            <Dashboard />
+          </ProtectedRoute>
+        }
+        />
+
+        <Route exact path="/admin/products" element={
+          <ProtectedRoute isAdmin={true}>
+            <ProductList />
+          </ProtectedRoute>
+        }
+        />
+
+        <Route exact path="/admin/product/:id" element={
+          <ProtectedRoute isAdmin={true}>
+            <UpdateProduct />
+          </ProtectedRoute>
+        }
+        />
+
+        <Route exact path="/admin/product" element={
+          <ProtectedRoute isAdmin={true}>
+            <NewProduct />
+          </ProtectedRoute>
+        }
+        />
+
+        <Route exact path="/admin/orders" element={
+          <ProtectedRoute isAdmin={true}>
+            <OrderList />
+          </ProtectedRoute>
+        }
+        />
+
+        <Route exact path="/admin/order/:id" element={
+          <ProtectedRoute isAdmin={true}>
+            <ProcessOrder />
+          </ProtectedRoute>
+        }
+        />
+
+        <Route exact path="/admin/users" element={
+          <ProtectedRoute isAdmin={true}>
+            <UsersList />
+          </ProtectedRoute>
+        }
+        />
+
+        <Route exact path="/admin/user/:id" element={
+          <ProtectedRoute isAdmin={true}>
+            <UpdateUser />
+          </ProtectedRoute>
+        }
+        />
+
+        <Route exact path="/admin/reviews" element={
+          <ProtectedRoute isAdmin={true}>
+            <ProductReviews />
+          </ProtectedRoute>
+        }
+        />
 
       </Routes>
       <Footer />

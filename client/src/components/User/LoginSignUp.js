@@ -34,8 +34,8 @@ const LoginSignUp = () => {
 
   const { name, email, password } = user;
 
-  const [avatar, setAvatar] = useState("https://bashify.io/img/24d5f0b7a55edbd78b446a2575b96a53");
-  const [avatarPreview, setAvatarPreview] = useState("https://bashify.io/img/24d5f0b7a55edbd78b446a2575b96a53");
+  const [avatar, setAvatar] = useState("https://i.ibb.co/bW5PTf3/ic-actions-user.png");
+  const [avatarPreview, setAvatarPreview] = useState("https://i.ibb.co/bW5PTf3/ic-actions-user.png");
 
   const loginSubmit = (e) => {
     e.preventDefault();

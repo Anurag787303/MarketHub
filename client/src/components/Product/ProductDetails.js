@@ -6,7 +6,7 @@ import { useParams } from "react-router-dom";
 import {
   clearErrors,
   getProductDetails,
-  // newReview,
+  newReview,
 } from "../../actions/productAction";
 import ReviewCard from "./ReviewCard.js";
 import Loader from "../layout/Loader/Loader";
@@ -21,7 +21,7 @@ import {
   Button,
 } from "@mui/material";
 import Rating from '@mui/material/Rating';
-// import { NEW_REVIEW_RESET } from "../../constants/productConstants";
+import { NEW_REVIEW_RESET } from "../../constants/productConstants";
 
 const ProductDetails = () => {
   const dispatch = useDispatch();
@@ -32,9 +32,9 @@ const ProductDetails = () => {
     (state) => state.productDetails
   );
 
-  // const { success, error: reviewError } = useSelector(
-  //   (state) => state.newReview
-  // );
+  const { success, error: reviewError } = useSelector(
+    (state) => state.newReview
+  );
 
   const options = {
     size: "large",
@@ -49,7 +49,7 @@ const ProductDetails = () => {
   const [comment, setComment] = useState("");
 
   const increaseQuantity = () => {
-    if (product.Stock <= quantity) return;
+    if (product.stock <= quantity) return;
 
     const qty = quantity + 1;
     setQuantity(qty);
@@ -78,7 +78,7 @@ const ProductDetails = () => {
     myForm.set("comment", comment);
     myForm.set("productId", params.id);
 
-    // dispatch(newReview(myForm));
+    dispatch(newReview(myForm));
 
     setOpen(false);
   };
@@ -89,17 +89,17 @@ const ProductDetails = () => {
       dispatch(clearErrors());
     }
 
-    // if (reviewError) {
-    //   alert.error(reviewError);
-    //   dispatch(clearErrors());
-    // }
+    if (reviewError) {
+      alert.error(reviewError);
+      dispatch(clearErrors());
+    }
 
-    // if (success) {
-    //   alert.success("Review Submitted Successfully");
-    //   dispatch({ type: NEW_REVIEW_RESET });
-    // }
+    if (success) {
+      alert.success("Review Submitted Successfully");
+      dispatch({ type: NEW_REVIEW_RESET });
+    }
     dispatch(getProductDetails(params.id));
-  }, [dispatch, params.id, error, alert]);
+  }, [dispatch, params.id, error, alert, reviewError, success]);
 
   return (
     <Fragment>
@@ -144,7 +144,7 @@ const ProductDetails = () => {
                     <button onClick={increaseQuantity}>+</button>
                   </div>
                   <button
-                    disabled={product.Stock < 1 ? true : false}
+                    disabled={product.stock < 1 ? true : false}
                     onClick={addToCartHandler}
                   >
                     Add to Cart
@@ -153,8 +153,8 @@ const ProductDetails = () => {
 
                 <p>
                   Status:
-                  <b className={product.Stock < 1 ? "redColor" : "greenColor"}>
-                    {product.Stock < 1 ? "OutOfStock" : "InStock"}
+                  <b className={product.stock < 1 ? "redColor" : "greenColor"}>
+                    {product.stock < 1 ? "OutOfStock" : "InStock"}
                   </b>
                 </p>
               </div>

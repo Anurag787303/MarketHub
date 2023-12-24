@@ -10,9 +10,9 @@ const Footer = () => {
                 <div className='footer'>
                     <div className='footer-1'>
                         <Link to='/'>
-                        <div className='footer-1-logo'>
-                            <img src='https://uploads-ssl.webflow.com/63e857eaeaf853471d5335ff/63e86ab4c21faa7bc0bd90dd_Logo.svg' alt='logo' />
-                        </div>
+                            <div className='footer-1-logo'>
+                                <img src='https://uploads-ssl.webflow.com/63e857eaeaf853471d5335ff/63e86ab4c21faa7bc0bd90dd_Logo.svg' alt='logo' />
+                            </div>
                         </Link>
                         <p className='footer-1-text'>
                             lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
@@ -115,19 +115,19 @@ const Footer = () => {
                     <div className='footer-bottom-1'>
                         <div>
                             <div className='footer-bottom-1-image'>
-                                <img src='./assets/ic-ecommerce-basket.png' alt='basket' />
+                                <img src='https://i.ibb.co/KFwZZJs/ic-ecommerce-basket.png' alt='basket' />
                             </div>
                             <h2>Become Seller</h2>
                         </div>
                         <div>
                             <div className='footer-bottom-1-image'>
-                                <img src='./assets/ic-ecommerce-gift.png' alt='gift' />
+                                <img src='https://i.ibb.co/gFyCyGs/ic-ecommerce-gift.png' alt='gift' />
                             </div>
                             <h2>Gift Cards</h2>
                         </div>
                         <div>
                             <div className='footer-bottom-1-image'>
-                                <img src='./assets/ic-devices-desktop.png' alt='desktop' />
+                                <img src='https://i.ibb.co/Wv0yF5X/ic-devices-desktop.png' alt='desktop' />
                             </div>
                             <h2>Help Center</h2>
                         </div>

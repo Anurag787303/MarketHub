@@ -11,7 +11,9 @@ const ProductCard = ({ product }) => {
   };
   return (
     <Link className="productCard" to={`/product/${product._id}`}>
-      <img src={product.images[0].url} alt={product.name} />
+      <span className="product-card-image">
+        <img src={product.images[0].url} alt={product.name} />
+      </span>
       <p>{product.name}</p>
       <div>
         <Rating {...options} />{" "}
@@ -20,7 +22,10 @@ const ProductCard = ({ product }) => {
           ({product.numOfReviews} Reviews)
         </span>
       </div>
-      <span>{`₹${product.price}`}</span>
+      <div className="price-button">
+        <span>{`₹${product.price}`}</span>
+        <button>Buy Now</button>
+      </div>
     </Link>
   );
 };

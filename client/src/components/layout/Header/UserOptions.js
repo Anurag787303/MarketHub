@@ -13,7 +13,7 @@ import { logout } from "../../../actions/userAction";
 import { useDispatch, useSelector } from "react-redux";
 
 const UserOptions = ({ user }) => {
-//   const { cartItems } = useSelector((state) => state.cart);
+  //   const { cartItems } = useSelector((state) => state.cart);
 
   const [open, setOpen] = useState(false);
   const navigate = useNavigate();
@@ -49,13 +49,13 @@ const UserOptions = ({ user }) => {
 
   function orders() {
     navigate("/orders");
-}
+  }
   function account() {
     navigate("/account");
-}
+  }
   function cart() {
     navigate("/cart");
-}
+  }
   function logoutUser() {
     dispatch(logout());
     alert.success("Logout Successfully");
@@ -63,12 +63,12 @@ const UserOptions = ({ user }) => {
 
   return (
     <Fragment>
-      <Backdrop open={open} style={{ zIndex: "10" }} />
+      <Backdrop open={open} style={{ zIndex: "20" }} />
       <SpeedDial
         ariaLabel="SpeedDial tooltip example"
         onClose={() => setOpen(false)}
         onOpen={() => setOpen(true)}
-        style={{ zIndex: "11" }}
+        style={{ zIndex: "20" }}
         open={open}
         direction="down"
         className="speedDial"

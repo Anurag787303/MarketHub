@@ -5,8 +5,8 @@ import './Footer.css'
 const Footer = () => {
     return (
         <Fragment>
+            <div className='footer-line'></div>
             <div className='footer-wrapper'>
-                <div className='footer-line'></div>
                 <div className='footer'>
                     <div className='footer-1'>
                         <Link to='/'>

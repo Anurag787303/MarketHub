@@ -3,13 +3,28 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 93vmin;
+  height: 92.2vmin;
   display: flex;
   flex-direction: column;
   text-align: center;
   align-items: center;
   justify-content: center;
   color: white;
+}
+
+.homepage-outer {
+  background-color: #e4e6e6;
+  padding-bottom: 30px;
+}
+
+.homepage-second-section {
+  position: relative;
+  margin-top: -280px;
+  z-index: 11;
+}
+
+.image-slider>div>div>button {
+  top: 20% !important;
 }
 
 .banner>h1 {
@@ -72,18 +87,31 @@
 }
 
 .productCard {
-  width: 14vmax;
+  min-width: 18vmax;
+  max-width: 18vmax;
   display: flex;
+  max-height: 400px;
   flex-direction: column;
   text-decoration: none;
   color: rgb(48, 48, 48);
-  margin: 2vmax;
+  margin: 1vmax;
   transition: all 0.5s;
   padding-bottom: 0.5vmax;
+  background-color: white;
+  border: 1px solid #e1e1e1;
+  border-radius: 12px;
 }
 
-.productCard>img {
-  width: 14vmax;
+.productCard>span>img {
+  width: 100%;
+  border-radius: 10px;
+  aspect-ratio: 1/1;
+}
+
+.product-card-image {
+  padding: 1vmax 1.5vmax;
+  background-color: #f7f8f8;
+  border-radius: 12px 12px 0 0;
 }
 
 .productCard>div {
@@ -101,13 +129,32 @@
 .productCard>p {
   font-family: "Roboto";
   font-size: 1.2vmax;
-  margin: 1vmax 0.5vmax;
+  font-weight: 500;
+  margin: 1vmax 0.8vmax;
   margin-bottom: 0;
 }
 
-.productCard>span {
+.price-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.price-button>button {
+  margin-left: auto;
+  margin-right: 10px;
+  border-radius: 10px;
+  padding: 6px 8px;
+  border: none;
+  outline: none;
+  background-color: #7e9e56;
+  color: white;
+  font-weight: 500;
+}
+
+.price-button>span {
   margin: 0.5vmax;
-  color: tomato;
+  color: #151515;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-size: 1vmax;
 }
@@ -116,6 +163,26 @@
   box-shadow: 0 0 5px rgba(15, 15, 15, 0.26);
 
   transform: translateY(-1vmax);
+}
+
+.featured-product-container {
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  padding: 15px;
+  margin: 0 20px;
+  background-color: white;
+}
+
+.featured-product-container>h1 {
+  font-size: 26px;
+  border-radius: 10px 10px 0 0;
+  margin: 0;
+}
+
+.featured-products {
+  display: flex;
+  overflow: auto;
 }
 
 @media screen and (max-width: 600px) {

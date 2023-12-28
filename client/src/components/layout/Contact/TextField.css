@@ -1,0 +1,30 @@
+.label-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.label-container>label,
+.label-container>input,
+.label-container>textarea {
+    margin: 0;
+    padding: 0;
+}
+
+.label-container>label {
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.label-container>input,
+.label-container>textarea {
+    background-color: #fafafa;
+    height: 40px;
+    border: none;
+    outline: none;
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+
+.label-container>textarea {
+    height: auto;
+}

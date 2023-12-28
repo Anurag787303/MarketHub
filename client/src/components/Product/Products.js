@@ -9,7 +9,7 @@ import Slider from "@mui/material/Slider"
 import { useAlert } from "react-alert";
 import Typography from "@mui/material/Typography";
 import MetaData from "../layout/MetaData";
-import {useParams} from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 const categories = [
   "Laptop",
@@ -21,7 +21,7 @@ const categories = [
   "SmartPhones",
 ];
 
-const Products = ({ match }) => {
+const Products = () => {
   const dispatch = useDispatch();
   const params = useParams();
 
@@ -69,52 +69,103 @@ const Products = ({ match }) => {
       ) : (
         <Fragment>
           <MetaData title="PRODUCTS -- ECOMMERCE" />
-          <h2 className="productsHeading">Products</h2>
-
-          <div className="products">
-            {products &&
-              products.map((product) => (
-                <ProductCard key={product._id} product={product} />
-              ))}
+          <div className="product-header">
+            <h2 className="productsHeading">Products</h2>
+            <div className="display-options">
+              <div>
+                <span>
+                  <img src="https://i.ibb.co/tYyLPQd/ic-layout-square-grid.png" alt="Grid View Image" />
+                </span>
+                <p>Grid View</p>
+              </div>
+              <div>
+                <span>
+                  <img src="https://i.ibb.co/rkRSCkn/ic-layout-sections.png" alt="List View Image" />
+                </span>
+                <p>List View</p>
+              </div>
+            </div>
           </div>
 
-          <div className="filterBox">
-            <Typography>Price</Typography>
-            <Slider
-              value={price}
-              onChange={priceHandler}
-              valueLabelDisplay="auto"
-              aria-labelledby="range-slider"
-              min={0}
-              max={25000}
-            />
+          <div className="main-container">
+            <div className="filterBox">
+              <h1>Categories</h1>
+              <ul className="categoryBox">
+                {categories.map((category) => (
+                  <li
+                    className="category-link"
+                    key={category}
+                    onClick={() => setCategory(category)}
+                  >
+                    {category}
+                  </li>
+                ))}
+              </ul>
 
-            <Typography>Categories</Typography>
-            <ul className="categoryBox">
-              {categories.map((category) => (
-                <li
-                  className="category-link"
-                  key={category}
-                  onClick={() => setCategory(category)}
-                >
-                  {category}
-                </li>
-              ))}
-            </ul>
-
-            <fieldset>
-              <Typography component="legend">Ratings Above</Typography>
+              <h1>Price</h1>
               <Slider
-                value={ratings}
-                onChange={(e, newRating) => {
-                  setRatings(newRating);
-                }}
-                aria-labelledby="continuous-slider"
+                value={price}
+                onChange={priceHandler}
                 valueLabelDisplay="auto"
+                aria-labelledby="range-slider"
                 min={0}
-                max={5}
+                max={25000}
+                sx={{
+                  width: 300,
+                  color: 'green',
+                  '& .MuiSlider-thumb': {
+                    color: "#FDFDFD"
+                  }
+                }}
               />
-            </fieldset>
+              <span className="price-controller-inputs">
+                <span className="min-controller">
+                  <label>Min</label>
+                  <input type="number" />
+                </span>
+                <span className="max-controller">
+                  <label>Max</label>
+                  <input type="number" />
+                </span>
+              </span>
+
+              <fieldset className="rating-filter" style={{ border: "none" }}>
+                <h1 component="legend">Ratings Above</h1>
+                <div className="rating-data">
+                  <Slider
+                    className="rating-slider"
+                    value={ratings}
+                    onChange={(e, newRating) => {
+                      setRatings(newRating);
+                    }}
+                    aria-labelledby="continuous-slider"
+                    valueLabelDisplay="auto"
+                    min={0}
+                    max={5}
+                    sx={{
+                      width: "80%",
+                      color: "green",
+                      '& .MuiSlider-thumb': {
+                        color: "#FDFDFD"
+                      }
+                    }}
+                  />
+                  <input type="number" />
+                </div>
+              </fieldset>
+
+              <div className="filter-action-buttons">
+                <button style={{ backgroundColor: "#7e9e56", color: "white" }}>Apply</button>
+                <button>Reset</button>
+              </div>
+            </div>
+
+            <div className="products">
+              {products &&
+                products.map((product) => (
+                  <ProductCard key={product._id} product={product} />
+                ))}
+            </div>
           </div>
           {resultPerPage < count && (
             <div className="paginationBox">
